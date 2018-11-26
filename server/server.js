@@ -16,7 +16,7 @@ app.post('/todos', (req, res) => {
 
   todo.save().then((doc) => {
     console.log('Posted your todo');
-    console.log(`Todo: ${JSON.stringify(doc, undefined, 2)}`);
+    res.send(doc);
   }, (e) => {
     res.status(400).send(e);
   });
